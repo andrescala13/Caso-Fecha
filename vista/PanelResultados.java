@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.TitledBorder;
+import modelo.Libro;
 
 
 public class PanelResultados extends JPanel
@@ -43,9 +44,9 @@ public class PanelResultados extends JPanel
     
 }
 //Metodo de acceso a la informacion
-public void mostrarResultado(int pMayor)
+public void mostrarResultado(Libro modelo)
 {
-    taResultado.setText("El numero mayor es: " + pMayor);
+    taResultado.append(modelo + "\n");
 
 }
 //borrar resultados
@@ -53,10 +54,4 @@ public void borrar()
 {
     taResultado.setText("");
 }
-//Mostrar resultado
-    public void mostrarResultado(long numero, Object operador ,double costoplan )
-    {
-        taResultado.setText("el numero es:"+numero+"\nOperador: "+operador+"\nel saldo a pagar: "+costoplan);
-    }
-
-    }
+}

@@ -2,7 +2,7 @@ package controlador;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import modelo.Telefono;
+import modelo.Libro;
 import vista.VentanaPrincipal;
 
 
@@ -12,14 +12,14 @@ public class Controlador implements ActionListener
     // Atributos
     //-----------------
     private VentanaPrincipal vista;
-    private  Telefono modelo;
+    private  Libro modelo;
 
     //----------------
     // Metodos
     //----------------
 
     //Metodo Constructor
-    public Controlador(VentanaPrincipal pVista, Telefono pModelo)
+    public Controlador(VentanaPrincipal pVista, Libro pModelo)
     {
         this.vista = pVista;
         this.modelo = pModelo;
@@ -48,7 +48,12 @@ public class Controlador implements ActionListener
 
         if(comando.equals("hallar"))
         {
-           
+            modelo.setTitulo(vista.miPanelEntradaDatos.gettfx());
+            modelo.setAutor(vista.miPanelEntradaDatos.gettfy());
+            modelo.setEdicion(Integer.parseInt(vista.miPanelEntradaDatos.gettfz()));
+            //modelo.setEdicionLujo(vista.miPanelEntradaDatos.getEdiciondeLujo());
+            vista.miPanelResultados.mostrarResultado(modelo);
+
         }
         
     }
